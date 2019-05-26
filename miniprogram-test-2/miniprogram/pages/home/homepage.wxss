@@ -1,0 +1,61 @@
+/* pages/home/homepage.wxss */
+@import '../../dist/styles/index.wxss';
+.node{
+  width:100%;
+}
+.time{
+  font-size: small;  
+  vertical-align: right;
+}
+.content{
+align-content: center;
+font-size:larger;
+font-weight: bold;
+display: block;
+margin: 5%;
+}
+.date{
+  align-content: left;
+  font-size: larger;
+  font-style: oblique;
+  margin: 3%;
+}
+.rater{
+  padding: 5%;
+}
+.add{
+  background: rgb(191, 126, 216);
+  float: right;
+  margin-bottom: 2vh;
+}
+#add{
+  font-size: large;
+  font-weight: bolder;
+  color: #fff;
+
+}
+.delete{
+  align-self: bottom;
+  border-radius: 50%;
+  size:mini;
+  background-color: #fff;
+  text-align: center;
+}
+#detext{
+  font-size: large;
+  font-weight: bolder;
+}
+.status{
+  display: block;
+  float: right;
+  font-weight: bold;
+}
+.green{
+  color: green;
+}
+.red{
+  color: red;
+}
+.cal{
+  margin: 3vh;
+}

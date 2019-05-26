@@ -1,0 +1,45 @@
+<!--pages/home/homepage.wxml-->
+<!-- //日历显示 -->
+<wux-calendar id="wux-calendar" />
+<!-- //容器 -->
+<view class = "container">
+
+<view class='cal'>
+<wux-cell title="Calender " extra="{{ value1}}" bind:click="openCalendar"></wux-cell>
+</view>
+<!-- //添加按钮 -->
+      <button class='add' bindtap='addsche'><text id="add" > + </text></button> 
+<!-- //日程项 读数组对象item值进行显示 -->
+
+  <view bindtap="editsche" class='node' wx:for="{{array}}" wx:for-index="idx" wx:for-item="item" >
+    
+         <view><wux-divider show-text="{{ false }}" /></view>
+    
+    <!-- 依照数据库跳转相关详情连接 =？id= 这里要改 -->
+    <view class="scheitem"bindtap="editsche" class="wux-padding--10">
+    <wux-swipe-action autoClose right="{{right}}" bind:click='deletesche' >
+         
+      <wux-row >
+        <wux-col span="10">
+          <view  class="rater"><wux-rater slot="footer" default-value="{{ item.important}}" disabled /></view>
+          <text class="wux-text--center date">{{item.date}}</text>
+          <view class="wux-text--center content">{{item.content}}</view>
+        
+        </wux-col> 
+        <wux-col span="2">
+            <text class='time'>{{item.time}}</text>
+            <!-- 依据status设置选项未办已办 -->
+            <text class='status green' wx:if="{{item.status=='1'}}"> {{item.msg}}</text>
+            <text class='status red' wx:if="{{item.status=='0'}}"> {{item.msg}}</text>
+        </wux-col>
+      </wux-row>
+</wux-swipe-action>
+
+    </view>
+  
+    
+  </view>
+
+
+</view>
+

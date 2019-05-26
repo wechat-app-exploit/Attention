@@ -1,0 +1,42 @@
+{
+  "pages": [
+    "pages/home/homepage",
+    "pages/mine/mine",
+    "pages/mine/lists/list_todo",
+    "pages/mine/lists/list_done",
+    "pages/mine/lists/list_undone",
+    "pages/mine/highest/highest",
+    "pages/mine/analysis/analysis",
+    "pages/index/index",
+    "pages/userConsole/userConsole",
+    "pages/storageConsole/storageConsole",
+    "pages/databaseGuide/databaseGuide",
+    "pages/addFunction/addFunction",
+    "pages/deployFunctions/deployFunctions",
+    "pages/chooseLib/chooseLib"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "EasierHelper",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "text": "Home",
+        "pagePath": "pages/home/homepage",
+        "iconPath": "icon/zhuye0.png",
+        "selectedIconPath": "icon/zhuye.png"
+      },
+      {
+        "text": "About",
+        "pagePath": "pages/mine/mine",
+        "iconPath": "icon/wode0.png",
+        "selectedIconPath": "icon/wode.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}
