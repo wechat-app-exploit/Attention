@@ -5,13 +5,13 @@
 <view class = "container">
 
 <view class='cal'>
-<wux-cell title="Calender " extra="{{ value1}}" bind:click="openCalendar"></wux-cell>
+<wux-cell title="calendar " extra="{{value_calendar}}" bind:click="openCalendar"></wux-cell>
 </view>
 <!-- //添加按钮 -->
       <button class='add' bindtap='addsche'><text id="add" > + </text></button> 
 <!-- //日程项 读数组对象item值进行显示 -->
 
-  <view bindtap="editsche" class='node' wx:for="{{array}}" wx:for-index="idx" wx:for-item="item" >
+  <view bindtap="editsche" class='node' wx:for="{{sche_list}}" wx:key="_id" wx:for-index="idx" wx:for-item="item" >
     
          <view><wux-divider show-text="{{ false }}" /></view>
     
@@ -21,16 +21,17 @@
          
       <wux-row >
         <wux-col span="10">
-          <view  class="rater"><wux-rater slot="footer" default-value="{{ item.important}}" disabled /></view>
+          <view  class="rater"><wux-rater slot="footer" default-value="{{ item.priority+1}}" disabled /></view>
           <text class="wux-text--center date">{{item.date}}</text>
-          <view class="wux-text--center content">{{item.content}}</view>
+          <view class="wux-text--center content">{{item.title}}</view>
         
         </wux-col> 
         <wux-col span="2">
             <text class='time'>{{item.time}}</text>
             <!-- 依据status设置选项未办已办 -->
-            <text class='status green' wx:if="{{item.status=='1'}}"> {{item.msg}}</text>
-            <text class='status red' wx:if="{{item.status=='0'}}"> {{item.msg}}</text>
+            <text class='status green' wx:if="{{item.status=='1'}}"> 已完成</text>
+            <text class='status red' wx:if="{{item.status=='0'}}"> 待完成</text>
+            <text class='status grey' wx:if="{{item.status=='2'}}"> 未完成</text>
         </wux-col>
       </wux-row>
 </wux-swipe-action>

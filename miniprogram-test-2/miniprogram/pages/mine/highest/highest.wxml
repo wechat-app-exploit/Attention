@@ -6,15 +6,15 @@
     <view class='total'>累计发布日程数: {{highestNum+higherNum+highNum}}</view>
     <view class='list'>
       <button class='color highest'></button>
-      <text class='text'>高重要性: {{highestNum}}</text>
+      <text class='text'>高重要性(4、5星): {{highestNum}}</text>
     </view>
     <view class='list'>
       <button class='color higher'></button>
-      <text class='text'>中重要性: {{higherNum}}</text>
+      <text class='text'>中重要性(3星): {{higherNum}}</text>
     </view>
     <view class='list'>
       <button class='color high'></button>
-      <text class='text'>低重要性: {{highNum}}</text>
+      <text class='text'>低重要性(1、2星): {{highNum}}</text>
     </view>
   </view>
   <canvas canvas-id="Canvas" style="width:100%;height:360px;"></canvas>

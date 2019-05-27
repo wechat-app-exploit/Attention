@@ -8,9 +8,9 @@ const regeneratorRuntime = require('../../../utils/regenerator/runtime-module');
 Page({
 
   data: {
-    highestNum: 10, //重要性高的日程数目  priority:2
-    higherNum: 10, //重要性中等的日程数目  priority:1
-    highNum: 10, //重要性低的日程数目  priority:0
+    highestNum: 0, //重要性高的日程数目  priority:3+4
+    higherNum: 0, //重要性中等的日程数目  priority:2
+    highNum: 0, //重要性低的日程数目  priority:0+1
   },
 
   onLoad: async function () {
@@ -22,15 +22,21 @@ Page({
     let highestNum = 0;
     await table.where({
       _openid: openid,
-      priority: 2
+      priority: 3
     }).count().then(res => {
-      highestNum = res.total
+      highestNum += res.total
+    });
+    await table.where({
+      _openid: openid,
+      priority: 4
+    }).count().then(res => {
+      highestNum += res.total
     });
     //higherNum
     let higherNum = 0;
     await table.where({
       _openid: openid,
-      priority: 1
+      priority: 2
     }).count().then(res => {
       higherNum = res.total
     });
@@ -39,6 +45,12 @@ Page({
     await table.where({
       _openid: openid,
       priority: 0
+    }).count().then(res => {
+      highNum = res.total
+    });
+    await table.where({
+      _openid: openid,
+      priority: 1
     }).count().then(res => {
       highNum = res.total
     });

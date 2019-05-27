@@ -1,4 +1,7 @@
 {
+
+
+  
   "usingComponents": {
     "wux-upload": "../../dist/upload/index",
     "wux-row": "../../dist/row/index",
@@ -10,6 +13,9 @@
     "wux-input": "../../dist/input/index",
     "wux-rater": "../../dist/rater/index",
     "wux-button": "../../dist/button/index",
-    "wux-calendar": "../../dist/calendar/index"
+    "wux-calendar": "../../dist/calendar/index",
+    
+  
+    "wux-select": "../../dist/select/index"
   }
 }
