@@ -14,7 +14,8 @@ App({
     this.globalData = {
       openid: "",
       priorityArr: [0, 0, 0],
-      statusArr: [0, 0, 0]
+      statusArr: [0, 0, 0],
+    
     }
   }
 })

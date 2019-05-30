@@ -5,6 +5,7 @@
   overflow-y: scroll;
   width: 100%;
   font-size: 40rpx;
+  align-items:initial;
 }
 
 .list{

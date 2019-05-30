@@ -10,3 +10,7 @@
   margin-top: 5vh;
   display: block;
 }
+
+.container{
+  align-items: center;
+}
