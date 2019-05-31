@@ -1,46 +1,46 @@
 <!--pages/home/homepage.wxml-->
-<!-- //日历显示 -->
-<wux-calendar id="wux-calendar" />
-<!-- //容器 -->
+
+           <wux-calendar id="wux-calendar" />
 <view class = "container">
 
+            
 <view class='cal'>
-<wux-cell title="calendar " extra="{{value_calendar}}" bind:click="openCalendar"></wux-cell>
+<wux-cell title="Calender " extra="{{ value1}}" bind:click="openCalendar"></wux-cell>
 </view>
-<!-- //添加按钮 -->
-      <button class='add' bindtap='addsche'><text id="add" > + </text></button> 
-<!-- //日程项 读数组对象item值进行显示 -->
-
-  <view bindtap="editsche" class='node' wx:for="{{sche_list}}" wx:key="_id" wx:for-index="idx" wx:for-item="item" >
-    
+<wux-wing-blank size="small">
+  <view  wx:for="{{array}}" wx:for-index="idx" wx:for-item="item">
+     
+    <view class='item'>
          <view><wux-divider show-text="{{ false }}" /></view>
-    
-    <!-- 依照数据库跳转相关详情连接 =？id= 这里要改 -->
-    <view class="scheitem"bindtap="editsche" class="wux-padding--10">
-    <wux-swipe-action autoClose right="{{right}}" bind:click='deletesche' >
-         
+    <navigator url='../uploadpicture/uploadpicturepage'>
+    <view  class="scheitem">
       <wux-row >
-        <wux-col span="10">
-          <view  class="rater"><wux-rater slot="footer" default-value="{{ item.priority+1}}" disabled /></view>
+        <wux-col span="6">
+        <wux-row>
+          <wux-col span="2">          
+     <view class='delete' catchtap='deletesche'><text id='detext'>×</text></view>
+          </wux-col>
+          </wux-row>
+          <view  class="rater"><wux-rater slot="footer" default-value="{{ item.important }}" disabled /></view>
           <text class="wux-text--center date">{{item.date}}</text>
-          <view class="wux-text--center content">{{item.title}}</view>
+          <view class="wux-text--center content">{{item.content}}</view>
         
         </wux-col> 
-        <wux-col span="2">
+     、   <wux-col span="5">
+            <view class='imgV'><wux-image wux-class="image"shape="thumbnail" mode= " aspectFit"  src="{{item.picture}}" /></view>
             <text class='time'>{{item.time}}</text>
-            <!-- 依据status设置选项未办已办 -->
-            <text class='status green' wx:if="{{item.status=='1'}}"> 已完成</text>
-            <text class='status red' wx:if="{{item.status=='0'}}"> 待完成</text>
-            <text class='status grey' wx:if="{{item.status=='2'}}"> 未完成</text>
+            <text class='status green' wx:if="{{item.status=='1'}}">{{item.msg}}</text>
+            <text class='status red' wx:if="{{item.status=='0'}}">{{item.msg}}</text>
         </wux-col>
+        
+      
       </wux-row>
-</wux-swipe-action>
-
-    </view>
-  
-    
+      </view>
+      </navigator>
+      </view>
   </view>
-
+  
+        </wux-wing-blank>
+      <button class='add' bindtap='addsche'><text id="add" >+</text></button> 
 
 </view>
-
